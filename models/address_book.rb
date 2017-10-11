@@ -8,16 +8,20 @@ require "csv"
        @entries = []
      end
 
-   def add_entry(name, phone_number, email)
+    def atom_bomb
+      @entries = []
+    end
 
-     index = 0
-     entries.each do |entry|
+     def add_entry(name, phone_number, email)
 
-       if name < entry.name
-         break
-       end
-       index+= 1
-     end
+       index = 0
+       entries.each do |entry|
+
+         if name < entry.name
+           break
+         end
+         index+= 1
+      end
 
      entries.insert(index, Entry.new(name, phone_number, email))
    end

@@ -15,7 +15,8 @@ require_relative '../models/address_book'
      puts "3 - Search for an entry"
      puts "4 - View entry n"
      puts "5 - Import entries from a CSV"
-     puts "6 - Exit"
+     puts "6 - Delete all entries"
+     puts "7 - Exit"
      print "Enter your selection: "
 
 
@@ -44,7 +45,13 @@ require_relative '../models/address_book'
         system "clear"
         read_csv
         main_menu
+
       when 6
+        system "clear"
+        @address_book.atom_bomb
+        puts "All entries have been deleted"
+        main_menu
+      when 7
         puts "Good-bye!"
 
         exit(0)
@@ -159,7 +166,7 @@ require_relative '../models/address_book'
    end
 
    def search_submenu(entry)
-     
+
      puts "\nd - delete entry"
      puts "e - edit this entry"
      puts "m - return to main menu"
